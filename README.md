@@ -42,28 +42,30 @@ Start time: 1:00pm
 Finish time: 2:12pm
 Actual time needed to complete:  1hour 12 minutes
 
-Number and name of feature: Feature #2 -
-Estimate of time needed to complete:  minutes
-Start time: pm
+Number and name of feature: Feature #2 - Weather
+Estimate of time needed to complete: 120 minutes
+Start time: 2:30pm
 Finish time:
-Actual time needed to complete:
+Actual time needed to complete: Worked for 3 hours on Tuesday
 
-Number and name of feature: Feature 3 -
+Number and name of feature: Feature 3 - Errors
 Estimate of time needed to complete:
 Start time:
 Finish time:
 Actual time needed to complete:
 
-Number and name of feature: Feature 4 -
-Estimate of time needed to complete: 0 minutes
-Start time: pm
-Finish time: pm
-Actual time needed to complete: minutes
-
 - What went well, that I might forget if I don’t write down?
+
+The steps to build the express server. Definitely a few of them but it felt good to get it running with no issues. Of course nothing was going on with regards to requests or responses between the front & back end but the initial server build felt good.
 
 - What did I learn today?
 
+The importance of understanding the data object you are reaching out to. After getting stuck and watching three T/As struggle with connecting to it as well it is definitely not an easy subject to master.
+
 - What should I do differently next time?
 
+Really I am not sure. I asked for help quickly and I'm worse off now than I was yesterday.
+
 What still puzzles me, or what do I need to learn more about?
+
+I literally do not get the syntax, or the components required for the passing of data between the front-end and back-end. A big part of that is the data itself but putting it together is even more complex and I'm trying to work thru it.
