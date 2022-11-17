@@ -31,9 +31,10 @@ app.get('/weather', (request, response, next) => {
     // if (cityInput !== 'Seattle' || cityInput !== 'Amman' || cityInput !== 'Paris') {
     //   return alert('Please pick Amman, Seattle, or Paris for your search.');
     // }
+    let forecastArray = selectedCity.data.map((eachDay) => new Forecast(eachDay));
 
     // let cityCleanedUp = new City(selectedCity);
-    response.send(selectedCity);
+    response.send(forecastArray);
   } catch (error) {
     next(error);
   }
@@ -44,7 +45,6 @@ app.get('*', (request, response) => {
 });
 
 
-
 // ERROR HANDLERS
 app.use((error, request, response, next) => {
   response.status(500).send(error.message);
@@ -52,9 +52,9 @@ app.use((error, request, response, next) => {
 
 // CLASSES
 class Forecast {
-  constructor(weather) {
-    this.date = weather.valid_date;
-    this.description = weather.description;
+  constructor(day) {
+    this.date = day.valid_date;
+    this.description = day.weather.description;
   }
 }
 
