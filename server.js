@@ -40,9 +40,7 @@ app.get('/weather', (request, response, next) => {
   }
 });
 
-app.get('*', (request, response) => {
-  response.send('That route does not exist.');
-});
+app.use('*', notFound);
 
 
 // ERROR HANDLERS
@@ -58,6 +56,9 @@ class Forecast {
   }
 }
 
+function notFound(request, response) {
+  response.send('Route not found!').status(404);
+}
 
 // LISTEN
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
