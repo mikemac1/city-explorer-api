@@ -11,6 +11,7 @@ This project is the third JS React app Using the first Back-End Server
 ## Problem Domain
 
 15/16 November - This server was originally built to be the API for receiving requests from the city-explorer front-end server to gain the weather data for three cities. Currently sending weather data but not yet being displayed on the front-end as it still needs to be built.
+17 November - Weather data is now functioning in a modal for each city on the front end with appropriate error handling.
 
 ## Instructions
 
@@ -22,7 +23,7 @@ This project is the third JS React app Using the first Back-End Server
 
 ### Lab 7 Architecture
 
-![Architecture](architecture.png)
+![Architecture Lab 7](architecture.png)
 
 ## Resources
 
@@ -35,6 +36,7 @@ This project is the third JS React app Using the first Back-End Server
 ## Change Log
 
 - 2:15pm Initial repository for back-end built on local developer's machine and on Github (ToDo1)
+- 5:55pm Completed lab 7 functionality
 
 ## Comments & Reflections Lab 7
 
@@ -47,14 +49,14 @@ Actual time needed to complete:  1 hour 12 minutes
 
 ### Number and name of feature: Feature #2 - Weather
 
-Estimate of time needed to complete: 120 minutes
+Estimate of time needed to complete: ~ 10 hours
 Start time: 2:30pm (Tuesday)
-Finish time:
-Actual time needed to complete: Worked for 3 hours on Tuesday, worked for ~3 hours on Wednesday
+Finish time: 4:55pm (Thursday)
+Actual time needed to complete: Worked for 3 hours on Tuesday, worked for ~3 hours on Wednesday, and almost 4 hours on Thursday
 
 ### Number and name of feature: Feature 3 - Errors
 
-Estimate of time needed to complete:
-Start time:
-Finish time:
-Actual time needed to complete:
+Estimate of time needed to complete: 2 hours
+Start time: 5:00pm
+Finish time: 5:55pm
+Actual time needed to complete: 55 minutes
