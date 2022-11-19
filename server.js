@@ -7,9 +7,9 @@ const { response } = require('express');
 // REQUIRE
 const express = require('express');
 
-require('dotenv').config();
+const axios = require('axios');
 
-let data = require('./data/weather.json');
+require('dotenv').config();
 
 const cors = require('cors');
 
@@ -23,18 +23,21 @@ app.get('/', (request, response) => {
   response.send('Hello, from our server');
 });
 
-app.get('/weather', (request, response, next) => {
+app.get('/weather', async (request, response, next) => {
   try {
-    // /weather?city=value - http://localhost:3001/weather?city=Seattle
-    let cityInput = request.query.city; // From user
-    let selectedCity = data.find(cityData => cityData.city_name === cityInput); // Going thru "data object 3 - 143"
-    // if (cityInput !== 'Seattle' || cityInput !== 'Amman' || cityInput !== 'Paris') {
-    //   return alert('Please pick Amman, Seattle, or Paris for your search.');
-    // }
-    let forecastArray = selectedCity.data.map((eachDay) => new Forecast(eachDay));
 
-    // let cityCleanedUp = new City(selectedCity);
-    response.send(forecastArray);
+    // Latitude & Longitude variables from query search from user
+    let latInput = request.query.lat;
+    let longInput = request.query.long;
+    console.log(longInput);
+    // Data grabbed from WeatherBit
+    let weaUrl = `https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHER_API_KEY}&lang=en&units=I&days=3&lat=${latInput}&lon=${longInput}`;
+
+    let selectedCity = await axios.get(weaUrl);
+
+    // Create a Forecast object for each day of data
+    let cityWeather = selectedCity.data.data.map(day => new Forecast(day));
+    response.send(cityWeather);
   } catch (error) {
     next(error);
   }
@@ -53,6 +56,9 @@ class Forecast {
   constructor(day) {
     this.date = day.valid_date;
     this.description = day.weather.description;
+    this.low = day.low_temp;
+    this.high = day.max_temp;
+    this.fullDescription = `Today's weather is a low of ${this.low}F and a high of ${this.high}F with ${this.description}`;
   }
 }
 
