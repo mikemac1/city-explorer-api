@@ -13,6 +13,7 @@ This project is the third JS React app Using the first Back-End Server
 15/16 November - This server was originally built to be the API for receiving requests from the city-explorer front-end server to gain the weather data for three cities. Currently sending weather data but not yet being displayed on the front-end as it still needs to be built.
 17 November - Weather data is now functioning in a modal for each city on the front end with appropriate error handling.
 19 November - Shifted weather data to be retrieved from Weather Bit versus using the weather.json file.
+20 November - Able to retrieve data from The Movie DB API and format it to send to the front end.
 
 ## Instructions
 
@@ -30,6 +31,10 @@ This project is the third JS React app Using the first Back-End Server
 
 ![Architecture](architecture8.png)
 
+### Lab 9 Architecture
+
+![Architecture](architecture9.png)
+
 ## Resources
 
 - [deployment](https://facebook.github.io/create-react-app/docs/deployment)
@@ -42,6 +47,7 @@ This project is the third JS React app Using the first Back-End Server
 
 - 2:15pm Initial repository for back-end built on local developer's machine and on Github (ToDo1)
 - 5:55pm Completed lab 7 functionality
+- 1:30pm 20 November successfully added and displaying The Movie DB data retrieval
 
 ## Comments & Reflections Lab 7
 
@@ -79,5 +85,12 @@ Actual time needed to complete: 5 hours
 
 Estimate of time needed to complete: 10 hours
 Start time: 3:45pm (Saturday)
+Finish time: 1:40pm (Sunday)
+Actual time needed to complete:  ~ 9 hours
+
+### Number and name of feature: Feature #3 - Publish
+
+Estimate of time needed to complete: 4 hours
+Start time: 1:30pm
 Finish time: pm
-Actual time needed to complete:  hours
+Actual time needed to complete:
