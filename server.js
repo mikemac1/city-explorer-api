@@ -25,19 +25,40 @@ app.get('/', (request, response) => {
 
 app.get('/weather', async (request, response, next) => {
   try {
-
+    console.log('Coming from the weather GET');
     // Latitude & Longitude variables from query search from user
     let latInput = request.query.lat;
     let longInput = request.query.long;
-    console.log(longInput);
+
     // Data grabbed from WeatherBit
     let weaUrl = `https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHER_API_KEY}&lang=en&units=I&days=3&lat=${latInput}&lon=${longInput}`;
-
-    let selectedCity = await axios.get(weaUrl);
+    let dirtyCity = await axios.get(weaUrl);
 
     // Create a Forecast object for each day of data
-    let cityWeather = selectedCity.data.data.map(day => new Forecast(day));
+    let cityWeather = dirtyCity.data.data.map(day => new Forecast(day));
+
     response.send(cityWeather);
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.get('/movie', async (request, response, next) => {
+  console.log('Coming from the movie GET');
+  try {
+    // Movie search from city query
+    let movSearch = request.query.search;
+    console.log(movSearch);
+
+    //Data grabbed from movie d/b
+    let movURL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_API_KEY}&query=${movSearch}`;
+    let movDirty = await axios.get(movURL);
+
+    // Generate an object for each movie
+    let movResults = movDirty.data.results.map(movie => new Movie(movie));
+
+    response.send(movResults);
+    console.log(movResults);
   } catch (error) {
     next(error);
   }
@@ -61,6 +82,18 @@ class Forecast {
     this.fullDescription = `Today's weather is a low of ${this.low}F and a high of ${this.high}F with ${this.description}`;
   }
 }
+
+class Movie {
+  constructor(movObject) {
+    this.title = movObject.title;
+    this.overview = movObject.overview;
+    this.voteAvg = movObject.vote_average;
+    this.totalVotes = movObject.vote_count;
+    this.posterPath = movObject.poster_path ? `https://image.tmdb.org/t/p/original/${movObject.poster_path}` : ' ';
+    this.relDate = movObject.release_date;
+  }
+}
+
 
 function notFound(request, response) {
   response.send('Route not found!').status(404);
