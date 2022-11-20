@@ -36,6 +36,7 @@ app.get('/weather', async (request, response, next) => {
 
     // Create a Forecast object for each day of data
     let cityWeather = dirtyCity.data.data.map(day => new Forecast(day));
+
     response.send(cityWeather);
   } catch (error) {
     next(error);
@@ -48,6 +49,7 @@ app.get('/movie', async (request, response, next) => {
     // Movie search from city query
     let movSearch = request.query.search;
     console.log(movSearch);
+
     //Data grabbed from movie d/b
     let movURL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_API_KEY}&query=${movSearch}`;
     let movDirty = await axios.get(movURL);

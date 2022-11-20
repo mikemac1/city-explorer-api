@@ -78,6 +78,6 @@ Actual time needed to complete: 5 hours
 ### Number and name of feature: Feature #2 - Movies
 
 Estimate of time needed to complete: 10 hours
-Start time: 3:45pm
+Start time: 3:45pm (Saturday)
 Finish time: pm
 Actual time needed to complete:  hours
