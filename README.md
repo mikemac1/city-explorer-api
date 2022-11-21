@@ -90,7 +90,7 @@ Actual time needed to complete:  ~ 9 hours
 
 ### Number and name of feature: Feature #3 - Publish
 
-Estimate of time needed to complete: 4 hours
+Estimate of time needed to complete: 2 hours
 Start time: 1:30pm
 Finish time: pm
 Actual time needed to complete:
